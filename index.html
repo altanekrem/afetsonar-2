@@ -1,152 +1,189 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AFETSONAR — Demo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AFETSONAR — Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <img src="assets/logo.png" alt="AfetSonar Logo" class="logo-img">
-        <div><div style="font-weight:700">AFETSONAR</div><div style="font-size:12px;color:var(--muted)">Başakşehir Living Lab Participant Project 2025</div></div>
-      </div>
-      <div class="slogan">One Minute, One Life<span class="underline"></span></div>
-      <nav><a href="#top">Home Page</a><a href="#about">About</a><a href="#team">Team</a><a href="#contact">Contact</a></nav>
-    </header>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="assets/logo.png" alt="AfetSonar Logo" class="logo-img">
+        <div>
+          <div style="font-weight:700">AFETSONAR</div>
+          <div style="font-size:12px;color:var(--muted)">Başakşehir Living Lab Participant Project 2025</div>
+        </div>
+      </div>
 
-        <section id="top" class="hero">
-      <div class="videos">
+      <div class="slogan">One Minute, One Life<span class="underline"></span></div>
 
-        <div class="card">
-          <h3>What is AFETSONAR?</h3>
-          <div class="video-responsive">
-  <iframe 
-    src="https://www.youtube.com/embed/wych9Q8yYzI"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-</div>
+      <nav>
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-        </div>
+    <!-- HERO VIDEO -->
+    <section id="top" class="hero">
+      <div class="videos">
 
-      </div>
+        <div class="card">
+          <h3>What is AFETSONAR?</h3>
 
-      <small>Project Introduction Video</small>
-    </section>
-        <section id="about">
-      <h2>About Us</h2>
-      <p>AFETSONAR is an artificial intelligence-based system that provides rapid data analysis and team coordination in disaster areas. It uses satellite and UAV (drone) images to perform damage assessment, prioritize critical areas, and optimize the deployment of intervention teams.</p>
-    </section>
+          <div class="video-responsive">
+            <iframe 
+              src="https://www.youtube.com/embed/wych9Q8yYzI"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
 
-        <main class="analysis">
-      <section class="panel upload">
-        <h4>Compare Earthquake Images</h4>
-        <div class="divider"></div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;">
-          <label class="drop" id="dropBefore">
-            <div style="font-weight:600">📁 Image Before Earthquake</div>
-            <button class="btn" id="chooseBeforeBtn">Select</button>
-            <input type="file" id="beforeInput" accept="image/*">
-          </label>
+        </div>
 
-          <label class="drop" id="dropAfter">
-            <div style="font-weight:600">📁 Image After Earthquake</div>
-            <button class="btn" id="chooseAfterBtn">Select</button>
-            <input type="file" id="afterInput" accept="image/*">
-          </label>
-        </div>
+      </div>
 
-        <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
-          <button class="btn" id="analyzeBtn">ANALYZE</button>
-          <button class="btn" id="loadDemoBtn">Load Demo Visuals</button>
-        </div>
-      </section>
+      <small>Project Introduction Video</small>
+    </section>
+    <!-- /HERO -->
 
-      <aside class="panel" id="resultPanel">
-        <h4>Analysis Output</h4>
-        <div class="divider"></div>
-        <canvas id="resultCanvas" width="800" height="450"></canvas>
-        <div class="legend">Red: Severe damage | Yellow: Medium | Green: Light</div>
-      </aside>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        AFETSONAR is an AI-powered system that provides rapid damage analysis and team coordination in disaster zones. 
+        Using satellite and UAV imagery, it detects collapsed structures, prioritizes critical areas, and optimizes 
+        rescue team routing.
+      </p>
+    </section>
 
-      <section class="examples">
-        <h4>Examples from Data Set</h4>
-        <div class="example-list">
-  <button class="example-btn" data-example="1">1. Example</button>
-  <button class="example-btn" data-example="2">2. Example</button>
-  <button class="example-btn" data-example="3">3. Example</button>
-  <button class="example-btn" data-example="4">4. Example</button>
-</div>
+    <!-- ANALYSIS AREA -->
+    <main class="analysis">
+      <section class="panel upload">
+        <h4>Compare Earthquake Images</h4>
+        <div class="divider"></div>
 
-      </section>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;">
 
-      <section class="plan">
-        <h4>AFETSONAR Intervention Plan</h4>
-        <div class="divider"></div>
-        <div id="afetPlan"></div>
-      </section>
-    </main>
+          <label class="drop" id="dropBefore">
+            <div style="font-weight:600">📁 Pre-Earthquake Image</div>
+            <button class="btn" id="chooseBeforeBtn">Select</button>
+            <input type="file" id="beforeInput" accept="image/*">
+          </label>
 
-   <section id="team" class="team">
-  <h4>Team Members</h4>
-  <div class="divider"></div>
+          <label class="drop" id="dropAfter">
+            <div style="font-weight:600">📁 Post-Earthquake Image</div>
+            <button class="btn" id="chooseAfterBtn">Select</button>
+            <input type="file" id="afterInput" accept="image/*">
+          </label>
 
-  <div class="team-cards">
+        </div>
 
-        <div class="card-member">
-      <img class="avatar-img" src="assets/1.jpg">
-      <div>
-        <h5>Ayşegül Balım Yabacı</h5>
-        <p class="small">Team Captain – Software & Project Management</p>
-      </div>
-    </div>
+        <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
+          <button class="btn" id="analyzeBtn">RUN ANALYSIS</button>
+          <button class="btn" id="loadDemoBtn">Load Demo Images</button>
+        </div>
+      </section>
 
-        <div class="card-member">
-      <img class="avatar-img" src="assets/2.jpg">
-      <div>
-        <h5>Altan Ekrem Özkan</h5>
-        <p class="small">Software & Algorithm Developer</p>
-      </div>
-    </div>
+      <aside class="panel" id="resultPanel">
+        <h4>Analysis Output</h4>
+        <div class="divider"></div>
 
-        <div class="card-member">
-      <img class="avatar-img" src="assets/3.jpg">
-      <div>
-        <h5>Ömer Tuncer</h5>
-        <p class="small">Artificial Intelligence & Model Development</p>
-      </div>
-    </div>
+        <canvas id="resultCanvas" width="800" height="450"></canvas>
 
-        <div class="card-member">
-      <img class="avatar-img" src="assets/4.jpg">
-      <div>
-        <h5>Eray Taha Yılmaz</h5>
-        <p class="small">Research, Content & Communication</p>
-      </div>
-    </div>
+        <div class="legend">
+          Red: Severe Damage | Yellow: Moderate | Green: Minor
+        </div>
+      </aside>
 
-  </div>
-</section>
+      <section class="examples">
+        <h4>Dataset Examples</h4>
+
+        <div class="example-list">
+          <button class="example-btn" data-example="1">Example 1</button>
+          <button class="example-btn" data-example="2">Example 2</button>
+          <button class="example-btn" data-example="3">Example 3</button>
+          <button class="example-btn" data-example="4">Example 4</button>
+        </div>
+
+      </section>
+
+      <section class="plan">
+        <h4>AFETSONAR Response Plan</h4>
+        <div class="divider"></div>
+        <div id="afetPlan"></div>
+      </section>
+
+    </main>
 
 
-    <footer id="contact" class="container">
-      <div><div style="font-weight:700">Contact</div><div style="color:var(--muted)">
-  Instagram: 
-  <a href="https://www.instagram.com/afetsonar.ai/" 
-     target="_blank" 
-     style="color:#56A8FB;text-decoration:none;font-weight:600;">
-    @afetsonar.ai
-  </a>
-</div>
-</div>
-      <div style="text-align:right"><small>© 2025 AFETSONAR | Başakşehir Living Lab Participant Project</small></div>
-    </footer>
-  </div>
+    <!-- TEAM -->
+    <section id="team" class="team">
+      <h4>Team Members</h4>
+      <div class="divider"></div>
 
-  <script src="script.js"></script>
+      <div class="team-cards">
+
+        <div class="card-member">
+          <img class="avatar-img" src="assets/1.jpg">
+          <div>
+            <h5>Ayşegül Balım Yabacı</h5>
+            <p class="small">Team Leader – Software & Project Management</p>
+          </div>
+        </div>
+
+        <div class="card-member">
+          <img class="avatar-img" src="assets/2.jpg">
+          <div>
+            <h5>Altan Ekrem Özkan</h5>
+            <p class="small">Software & Algorithm Developer</p>
+          </div>
+        </div>
+
+        <div class="card-member">
+          <img class="avatar-img" src="assets/3.jpg">
+          <div>
+            <h5>Ömer Tuncer</h5>
+            <p class="small">AI & Model Development</p>
+          </div>
+        </div>
+
+        <div class="card-member">
+          <img class="avatar-img" src="assets/4.jpg">
+          <div>
+            <h5>Eray Taha Yılmaz</h5>
+            <p class="small">Research, Content & Communication</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer id="contact" class="container">
+      <div>
+        <div style="font-weight:700">Contact</div>
+        <div style="color:var(--muted)">
+          Instagram:
+          <a href="https://www.instagram.com/afetsonar.ai/" 
+             target="_blank" 
+             style="color:#56A8FB;text-decoration:none;font-weight:600;">
+            @afetsonar.ai
+          </a>
+        </div>
+      </div>
+
+      <div style="text-align:right">
+        <small>© 2025 AFETSONAR | Başakşehir Living Lab Participant Project</small>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
