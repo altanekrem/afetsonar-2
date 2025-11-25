@@ -41,7 +41,7 @@ video{width:100%;height:100%;object-fit:cover;display:block}
 .example-btn:hover{border:1px solid var(--accent);background:rgba(175,41,42,0.08)}
 
 /* ---------------------------------
-           TEAM KISMI 
+           TEAM SECTION
 ----------------------------------*/
 .team{
   margin-top:18px;
@@ -54,7 +54,7 @@ video{width:100%;height:100%;object-fit:cover;display:block}
   gap:12px;
 }
 
-/* Başlık */
+/* Title */
 #team h4{
   font-family:"Montserrat",sans-serif;
   font-size:24px;
@@ -63,7 +63,7 @@ video{width:100%;height:100%;object-fit:cover;display:block}
   margin-bottom:6px;
 }
 
-/* Çizgi */
+/* Divider line */
 #team .divider{
   margin-top:1px;
   margin-bottom:10px;
@@ -71,7 +71,7 @@ video{width:100%;height:100%;object-fit:cover;display:block}
 
 .team-cards{display:flex;gap:12px;flex-wrap:wrap}
 
-/* Kart */
+/* Member card */
 .card-member{
   background:var(--panel);
   padding:12px;
@@ -90,7 +90,7 @@ video{width:100%;height:100%;object-fit:cover;display:block}
   object-fit:cover;
 }
 
-/* İç metin bloğunu daha aşağı al */
+/* Adjust inner text block vertical alignment */
 .card-member div {
   display: flex;
   flex-direction: column;
@@ -98,12 +98,12 @@ video{width:100%;height:100%;object-fit:cover;display:block}
   padding-top: 6px;
 }
 
-/* İsim */
+/* Name */
 .card-member h5 {
   margin: 4px 0 2px 0 !important;
 }
 
-/* Açıklama */
+/* Description */
 .card-member .small {
   margin-top: 0px !important;
 }
@@ -124,12 +124,13 @@ footer{
   .slogan{font-size:20px}
 }
 
-/* TEK SATIR — Ayşegül Balım Yabacı */
+/* ONE-LINER FIX — Ayşegül Balım Yabacı */
 .team-cards .card-member:first-child h5 {
   font-size:12px !important;
   white-space:nowrap !important;
 }
-/* ANALİZ ALANI GENEL GRID YAPISI */
+
+/* GRID LAYOUT OF ANALYSIS AREA */
 .analysis {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -137,7 +138,7 @@ footer{
     width: 100%;
 }
 
-/* Sol ve sağ panel kutularının aynı hizada olması için */
+/* Ensure left & right panels align */
 .analysis .panel,
 .analysis aside {
     background: #434B51;
@@ -148,7 +149,7 @@ footer{
     box-sizing: border-box;
 }
 
-/* Örnekler ve müdahale planı dış kutuları hizalansın */
+/* Examples + Response Plan container alignment */
 .examples,
 .plan {
     background: #434B51;
@@ -159,12 +160,12 @@ footer{
     box-sizing: border-box;
 }
 
-/* ============================================================
-   VERİ ÖRNEKLERİ – TAM PAKET CSS
-   AFETSONAR tasarımına %100 uyumlu
-   ============================================================ */
+/* ===============================================
+   DATASET EXAMPLES — FULL PACKAGE CSS
+   100% AFETSONAR-compatible design
+   =============================================== */
 
-   .examples {
+.examples {
     grid-column: 1 / -1;
     background: var(--panel);
     padding: 20px;
@@ -202,7 +203,7 @@ footer{
     background: rgba(175,41,42,0.14);
 }
 
-/* Örnek metni kutusu */
+/* Example output text box */
 .example-output {
     background: #0d0f10;
     border-radius: 8px;
@@ -214,7 +215,7 @@ footer{
     font-size: 14px;
 }
 
-/* Mobil uyum */
+/* Mobile responsiveness */
 @media (max-width: 900px) {
     .example-buttons {
         justify-content: center;
@@ -224,10 +225,11 @@ footer{
         text-align: center;
     }
 }
+
 .video-responsive {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 oran */
+  padding-bottom: 56.25%;
   height: 0;
   border-radius: 12px;
   overflow: hidden;
@@ -241,4 +243,3 @@ footer{
   height: 100%;
   border: 0;
 }
-
